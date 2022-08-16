@@ -149,10 +149,7 @@ form button:disabled {
     color: red;
 }
 
-.post-detail {
-    width: 400px;
-    height: 400px;
-}
+
 
 .post-detail {
     display: flex;
@@ -162,6 +159,8 @@ form button:disabled {
     border: 2px solid yellow;
     height: 300px;
     width: 400px;
+     width: 400px;
+    height: 400px;
 }
 
 .category {
