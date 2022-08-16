@@ -16,6 +16,9 @@ export function renderPosts(posts) {
     const fragment = document.createDocumentFragment();
 
     for (const post of posts) {
+
+        const a = document.createElement('a');
+        a.href = `../post-detail/?id=${post.id}`;
         const li = document.createElement('li');
         li.classList.add('post-it');
 
@@ -36,7 +39,8 @@ export function renderPosts(posts) {
 
         li.append(titleEl, categoryEl, descriptionEl, contactEl);
 
-        fragment.append(li);
+        fragment.append(a);
+        a.append(li);
     }
 
     return fragment;
@@ -64,8 +68,10 @@ export function renderPostDetail(post) {
 
     const deleteButtonEl = document.createElement('button');
     deleteButtonEl.classList.add('delete-button');
+    deleteButtonEl.textContent = 'delete me';
 
     postContainerEl.append(categoryEl, titleEl, descriptionEl, contactEl, deleteButtonEl);
+
 
     return postContainerEl;
 }
