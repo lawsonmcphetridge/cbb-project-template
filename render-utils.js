@@ -48,7 +48,7 @@ export function renderPostDetail(post) {
 
     const categoryEl = document.createElement('p');
     categoryEl.classList.add('category');
-    categoryEl.textContent = `${post.category}`;
+    categoryEl.textContent = `${post.category.emoji}`;
 
     const titleEl = document.createElement('p');
     titleEl.classList.add('title');
@@ -66,4 +66,6 @@ export function renderPostDetail(post) {
     deleteButtonEl.classList.add('delete-button');
 
     postContainerEl.append(categoryEl, titleEl, descriptionEl, contactEl, deleteButtonEl);
+
+    return postContainerEl;
 }
