@@ -22,7 +22,7 @@ async function displayDetailPosts() {
         
         deleteButtonEl.addEventListener('click', async () => {
             await deletePostById(post.id);
-            location.href = `../`;
+            location.replace(`../`);
         });
         
         
