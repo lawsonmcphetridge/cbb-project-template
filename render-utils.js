@@ -1,3 +1,6 @@
+import { deletePostById } from './fetch-utils.js';
+
+
 export function renderCategoryOptions(categories) {
     // document fragment is a "bag" for elements
     const fragment = document.createDocumentFragment();
@@ -66,11 +69,7 @@ export function renderPostDetail(post) {
     contactEl.classList.add('contact');
     contactEl.textContent = `${post.contact}`;
 
-    const deleteButtonEl = document.createElement('button');
-    deleteButtonEl.classList.add('delete-button');
-    deleteButtonEl.textContent = 'delete me';
-
-    postContainerEl.append(categoryEl, titleEl, descriptionEl, contactEl, deleteButtonEl);
+    postContainerEl.append(categoryEl, titleEl, descriptionEl, contactEl);
 
 
     return postContainerEl;
