@@ -1,4 +1,3 @@
-import { deletePostById } from './fetch-utils.js';
 
 
 export function renderCategoryOptions(categories) {
