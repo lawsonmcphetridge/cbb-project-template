@@ -14,14 +14,18 @@ async function displayDetailPosts() {
     const user = checkAuth();
 
     if (user.id === post.user_id) {
-
+        
         const deleteButtonEl = document.createElement('button');
         deleteButtonEl.classList.add('delete-button');
         deleteButtonEl.textContent = 'delete me';
         
-        deleteButtonEl.addEventListener('click', () => {
-            deletePostById(post.id);
+        
+        deleteButtonEl.addEventListener('click', async () => {
+            await deletePostById(post.id);
+            location.href = `../`;
         });
+        
+        
         postDetailEl.append(deleteButtonEl);
     }
 }
