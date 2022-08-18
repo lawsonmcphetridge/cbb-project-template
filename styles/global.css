@@ -148,3 +148,46 @@ form button:disabled {
     min-height: 1em;
     color: red;
 }
+
+
+
+.post-detail {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    align-items: center;
+    border: 2px solid yellow;
+    height: 300px;
+    width: 400px;
+     width: 400px;
+    height: 400px;
+}
+
+.category {
+    margin: 15px;
+}
+
+.title {
+    margin: 15px;
+}
+
+.description {
+    margin: 15px;
+}
+
+.contact {
+    margin: 15px;
+}
+
+.delete-button {
+    margin: 15px;
+    height: 40px;
+    width: 100px;
+    background-color: red;
+    border-radius: 10px;
+    color: black;
+}
+
+.user-profile {
+    margin: 15px;
+}

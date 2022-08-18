@@ -1,3 +1,5 @@
+
+
 export function renderCategoryOptions(categories) {
     // document fragment is a "bag" for elements
     const fragment = document.createDocumentFragment();
@@ -16,6 +18,9 @@ export function renderPosts(posts) {
     const fragment = document.createDocumentFragment();
 
     for (const post of posts) {
+
+        const a = document.createElement('a');
+        a.href = `../post-detail/?id=${post.id}`;
         const li = document.createElement('li');
         li.classList.add('post-it');
 
@@ -36,8 +41,51 @@ export function renderPosts(posts) {
 
         li.append(titleEl, categoryEl, descriptionEl, contactEl);
 
-        fragment.append(li);
+        fragment.append(a);
+        a.append(li);
     }
 
     return fragment;
+}
+
+export function renderPostDetail(post) {
+    const postContainerEl = document.createElement('div');
+    postContainerEl.classList.add('post-detail');
+
+    const categoryEl = document.createElement('p');
+    categoryEl.classList.add('category');
+    categoryEl.textContent = `${post.category.emoji}`;
+
+    const titleEl = document.createElement('p');
+    titleEl.classList.add('title');
+    titleEl.textContent = `${post.title}`;
+
+    const descriptionEl = document.createElement('p');
+    descriptionEl.classList.add('description');
+    descriptionEl.textContent = `${post.description}`;
+
+    const contactEl = document.createElement('p');
+    contactEl.classList.add('contact');
+    contactEl.textContent = `${post.contact}`;
+
+    postContainerEl.append(categoryEl, titleEl, descriptionEl, contactEl);
+
+
+    return postContainerEl;
+}
+
+
+export function renderProfile(user) {
+    const userContainer = document.createElement('div');
+    userContainer.classList.add('user-profile');
+
+    const userName = document.createElement('p');
+    userName.textContent = `${user.name}`;
+
+    const bioEl = document.createElement('p');
+    bioEl.textContent = `${user.bio}`;
+
+    userContainer.append(userName, bioEl);
+    
+    return userContainer;
 }
