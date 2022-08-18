@@ -73,3 +73,18 @@ export function renderPostDetail(post) {
 
     return postContainerEl;
 }
+
+
+export function renderProfile(user) {
+    const userContainer = document.createElement('div');
+
+    const userName = document.createElement('p');
+    userName.textContent = `${user.name}`;
+
+    const bioEl = document.createElement('p');
+    bioEl.textContent = `${user.bio}`;
+
+    userContainer.append(userName, bioEl);
+    
+    return userContainer;
+}

@@ -75,6 +75,11 @@ export async function getProfileById(id) {
     return response.data;
 }
 
+export async function getAllProfiles() {
+    const response = await client.from('profiles').select('*');
+    return response.data;
+}
+
 
 
 
