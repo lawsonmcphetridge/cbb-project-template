@@ -1,4 +1,13 @@
+
+import { checkAuth, saveProfile, getProfileById } from '../fetch-utils.js';
+
+
 const formEl = document.getElementById('profile-form');
+const profileNameInput = formEl.querySelector('[name=profile-name]');
+const profileBioInput = formEl.querySelector('[name=profile-bio]');
+
+
+const user = checkAuth();
 
 const userProfile = {
     name: '',
@@ -12,7 +21,26 @@ formEl.addEventListener('submit', async (e) => {
     userProfile.name = data.get('profile-name');
     userProfile.bio = data.get('profile-bio');
 
-    console.log(userProfile);
+    await saveProfile(userProfile);
+
 
     formEl.reset();
 });
+
+
+
+
+async function displayProfile() {
+    const response = await getProfileById(user.id);
+    if (response) {
+        profileNameInput.value = response.name;
+        profileBioInput.value = response.bio;
+    }
+}
+
+displayProfile();
+
+
+
+
+

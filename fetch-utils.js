@@ -35,8 +35,7 @@ function checkError({ data, error }) {
 
 /* Categories */
 
-export async function getCategories() {
-    const response = await client.from('categories').select('*');
+export async function getCategories() { const response = await client.from('categories').select('*');
     return checkError(response);
 }
 
@@ -64,14 +63,20 @@ export async function deletePostById(id) {
     return response.data;
 }
 
-getProfile();
+
 
 
 export async function saveProfile(userProfile) {
-    return await client.from('what ever we named the table').upsert(userProfile);
+    return await client.from('profiles').upsert(userProfile);
 }
+
+export async function getProfileById(id) {
+    const response = await client.from('profiles').select('*').match({ id }).single();
+    return response.data;
+}
+
+
+
 
 // build the table,figure out how to send stuff to table then tie it to the form
 
-
-.upsert
