@@ -10,10 +10,16 @@ Note that the comments feature will be added later this week to this page
 
 Sketch out what the page will look like. On your diagram, identify:
 
+
 -   What are the pieces of data required? (down to the field/column level)
 -   What actions take place on the page? (usually means DOM events + page load)
 
 Take a screen shot and include in your repo
+
+It will look like the screenshot in this folder, delete post png. It will have a delete button with a place to add comments 
+the actions that will take place on this page are, clicking of the delete button which will be a event listener tied to the id of the user. the data that is required is
+what id is the user? What is the post about?
+
 
 ## Page & UI
 
