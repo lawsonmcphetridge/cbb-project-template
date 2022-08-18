@@ -64,4 +64,14 @@ export async function deletePostById(id) {
     return response.data;
 }
 
+getProfile();
 
+
+export async function saveProfile(userProfile) {
+    return await client.from('what ever we named the table').upsert(userProfile);
+}
+
+// build the table,figure out how to send stuff to table then tie it to the form
+
+
+.upsert
