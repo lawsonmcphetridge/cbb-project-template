@@ -63,3 +63,5 @@ export async function deletePostById(id) {
     const response = await client.from('posts').delete().match({ id });
     return response.data;
 }
+
+
