@@ -77,6 +77,7 @@ export function renderPostDetail(post) {
 
 export function renderProfile(user) {
     const userContainer = document.createElement('div');
+    userContainer.classList.add('user-profile');
 
     const userName = document.createElement('p');
     userName.textContent = `${user.name}`;

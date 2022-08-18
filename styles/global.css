@@ -187,3 +187,7 @@ form button:disabled {
     border-radius: 10px;
     color: black;
 }
+
+.user-profile {
+    margin: 15px;
+}
