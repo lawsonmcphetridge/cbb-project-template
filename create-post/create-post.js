@@ -7,6 +7,7 @@ const signOutLink = document.getElementById('sign-out-link');
 checkAuth();
 signOutLink.addEventListener('click', signOutUser);
 
+
 const categorySelect = document.getElementById('category-select');
 const postItForm = document.getElementById('post-it-form');
 const addButton = postItForm.querySelector('button');
@@ -62,3 +63,5 @@ postItForm.addEventListener('submit', async (e) => {
         location.assign('../');
     }
 });
+
+

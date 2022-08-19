@@ -1,5 +1,5 @@
 import { renderPostDetail } from '../render-utils.js';
-import { checkAuth, getPostById, deletePostById } from '../fetch-utils.js';
+import { checkAuth, getPostById, deletePostById, signOutUser } from '../fetch-utils.js';
 
 
 const params = new URLSearchParams(window.location.search);
@@ -38,3 +38,6 @@ async function displayDetailPosts() {
 
 
 displayDetailPosts();
+const signOutLink = document.getElementById('sign-out-link');
+signOutLink.addEventListener('click', signOutUser);
+checkAuth();

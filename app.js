@@ -8,7 +8,6 @@ import { renderPosts } from './render-utils.js';
 // sign out link
 const signOutLink = document.getElementById('sign-out-link');
 signOutLink.addEventListener('click', signOutUser);
-// make sure we have a user
 checkAuth();
 
 // grab needed DOM elements on page

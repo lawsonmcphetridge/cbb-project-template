@@ -1,5 +1,5 @@
 
-import { checkAuth, saveProfile, getProfileById } from '../fetch-utils.js';
+import { checkAuth, saveProfile, getProfileById, signOutUser } from '../fetch-utils.js';
 
 
 const formEl = document.getElementById('profile-form');
@@ -39,6 +39,10 @@ async function displayProfile() {
 }
 
 displayProfile();
+const signOutLink = document.getElementById('sign-out-link');
+signOutLink.addEventListener('click', signOutUser);
+checkAuth();
+
 
 
 
